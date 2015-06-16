@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FifaGuide.Views.Ranking">
+  <StackLayout Spacing="2" Orientation="Vertical">
+    <Picker x:Name="pkAtributos" Title="Atributos" SelectedIndexChanged="pkAtributos_SelectedIndexChanged">
+
+    </Picker>
+    <ListView x:Name="ListRanking" HasUnevenRows="True" ItemSelected="ListRanking_ItemSelected">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Spacing="1" Orientation="Horizontal" BackgroundColor="{Binding BgColor}">
+                <Image Source="{Binding urlProfileImage}" VerticalOptions="FillAndExpand"></Image>
+                <StackLayout Spacing="2" Orientation="Vertical">
+                  <StackLayout Spacing="5" Orientation="Horizontal">
+                    <Label Text="{Binding first_name}" FontSize="24" TextColor="Red"></Label>
+                    <Label Text="{Binding last_name}" FontSize="24" TextColor="Red"></Label>
+                  </StackLayout>
+                  <StackLayout Spacing="5" Orientation="Horizontal">
+                    <Label Text="Altura: " TextColor="Red"></Label>
+                    <Label Text="{Binding height}" TextColor="Red"></Label>
+                    <Label Text="Nota: " TextColor="Red"></Label>
+                    <Label Text="{Binding rating}" TextColor="Red"></Label>
+                  </StackLayout>
+                </StackLayout>
+              </StackLayout>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
